@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9FE5F2">
+  <meta name="description" content="SkillSpring Little Explorers: cheerful, bite-size learning adventures for early learners. Works offline; no account needed.">
+  <meta name="color-scheme" content="light">
+  <title>SkillSpring 🌼 Little Explorers</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI1MCIgZmlsbD0iIzhEREFFRSIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9Ijk4IiByPSI3MCIgZmlsbD0iIzc2RDk3NiIvPgo8Y2lyY2xlIGN4PSI2MCIgY3k9IjU1IiByPSIyMyIgZmlsbD0iIzgwRUE4NSIvPjxjaXJjbGUgY3g9IjEzNCIgY3k9IjU1IiByPSIyMyIgZmlsbD0iIzgwRUE4NSIvPgo8Y2lyY2xlIGN4PSI2MyIgY3k9IjU4IiByPSIxNCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIxMzEiIGN5PSI1OCIgcj0iMTQiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjY1IiBjeT0iNjAiIHI9IjciIGZpbGw9IiMyNjRDNEIiLz48Y2lyY2xlIGN4PSIxMjkiIGN5PSI2MCIgcj0iNyIgZmlsbD0iIzI2NEM0QiIvPgo8cGF0aCBkPSJNNzIgMTE3cTI1IDI3IDQ5IDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzI4NkU1NiIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjQ3IiBjeT0iMTEzIiByeD0iMTQiIHJ5PSI4IiBmaWxsPSIjRkY5Q0I5Ii8+PGVsbGlwc2UgY3g9IjE0MyIgY3k9IjExMyIgcng9IjE0IiByeT0iOCIgZmlsbD0iI0ZGOUNCOSIvPgo8L3N2Zz4=">
+  
+  <style>
+:root {
+  --ink:#254B57; --muted:#5C7880; --cream:#FFFDF5; --white:#fff;
+  --sky:#DDF7FB; --mint:#DBF7D5; --orange:#FF925F; --violet:#8A77E9;
+  --line:#E8EEDE; --shadow:0 16px 42px rgba(68,116,118,.12);
+  --round:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);background:linear-gradient(180deg,#C6F2FB 0,#ECFBF7 45%,#FFFDF2 100%);font-family:"Trebuchet MS","Arial Rounded MT Bold",system-ui,-apple-system,sans-serif;line-height:1.45;overflow-x:hidden}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+button:focus-visible{outline:4px solid #1C7776;outline-offset:4px}
+button:disabled{cursor:not-allowed;opacity:.55}
+button,button *{-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+.skip-link{position:absolute;left:10px;top:-80px;padding:12px 20px;border-radius:12px;background:#fff;z-index:1000}.skip-link:focus{top:10px}
+.sky-sprinkles{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.sky-sprinkles span{position:absolute;font-size:24px;opacity:.4;color:#FFF}
+.sky-sprinkles span:nth-child(1){top:9%;left:8%}.sky-sprinkles span:nth-child(2){top:23%;right:4%;color:#F8BE60}.sky-sprinkles span:nth-child(3){top:63%;left:4%;color:#D4AEFF}.sky-sprinkles span:nth-child(4){top:79%;right:8%;color:#94CDDA}.sky-sprinkles span:nth-child(5){bottom:9%;left:18%;color:#F9A1AE}
+.app-shell{width:min(1250px,calc(100% - 40px));margin:0 auto}
+.site-header{height:110px;display:flex;align-items:center;gap:28px;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;border:0;background:transparent;color:var(--ink);padding:0;white-space:nowrap;text-align:left}
+.logo-flower{display:grid;place-items:center;width:51px;height:51px;color:#FFBE57;font-size:57px;line-height:1;text-shadow:1px 3px 0 #fff}
+.logo strong{display:block;font-weight:1000;font-size:28px;line-height:1;letter-spacing:-1.6px}
+.logo strong span{color:#F58D62}.logo small{display:block;font-size:10px;font-weight:900;letter-spacing:2.4px;color:#62959C;margin-top:5px}
+.nav-tabs{display:flex;gap:7px;background:rgba(255,255,255,.71);padding:7px;border-radius:999px;border:1px solid rgba(255,255,255,.8)}
+.nav-tab{border:0;background:transparent;border-radius:999px;font-size:15px;font-weight:900;color:#61838B;padding:13px 19px;min-height:49px;white-space:nowrap}
+.nav-tab.current{color:#2B7772;background:#E2F7DF;box-shadow:inset 0 -2px rgba(63,129,101,.09)}
+.nav-tab span:first-child{margin-right:3px;font-size:20px}
+.header-actions{display:flex;gap:10px;align-items:center}
+.star-count{display:flex;align-items:center;gap:6px;padding:12px 14px;background:#fff;border-radius:17px;font-weight:1000;font-size:19px;box-shadow:0 5px 16px rgba(40,100,105,.06)}
+.star-count span:first-child{font-size:21px}
+.sound-btn{background:#fff;border:0;width:51px;height:51px;border-radius:16px;font-size:26px;box-shadow:0 5px 16px rgba(40,100,105,.06)}
+.page{animation:appear .32s ease both}
+@keyframes appear{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero-card{position:relative;isolation:isolate;overflow:hidden;min-height:360px;border-radius:40px;background:linear-gradient(116deg,#B8EAD6 0%,#D6F5B5 53%,#F8EDAA 100%);border:5px solid rgba(255,255,255,.7);box-shadow:var(--shadow);display:grid;grid-template-columns:53% 47%;align-items:center}
+.hero-card:after{position:absolute;inset:auto -4% -52px -4%;height:90px;content:"";background:#A4DC9F;border-radius:50% 50% 0 0;z-index:-1}
+.hero-text{padding:43px 0 47px clamp(28px,5.4vw,72px);position:relative;z-index:3}
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:8px 13px;background:rgba(255,255,255,.83);font-weight:1000;font-size:11px;letter-spacing:1.2px;color:#498772}
+.hero-text h1{font-size:clamp(43px,5.1vw,72px);line-height:1.08;letter-spacing:-2.7px;margin:17px 0 13px;font-weight:1000}
+.hero-text h1 em{font-style:normal;color:#F68B57}
+.hero-text p{font-size:18px;font-weight:800;color:#58856F;margin:0 0 27px}
+.big-btn{border:0;border-bottom:5px solid rgba(0,0,0,.12);font-weight:1000;letter-spacing:-.25px;font-size:18px;border-radius:19px;min-height:61px;padding:14px 24px;display:inline-flex;justify-content:center;align-items:center;gap:15px;box-shadow:0 10px 22px rgba(97,104,84,.11);transition:transform .15s ease,filter .15s ease}
+.big-btn:hover{transform:translateY(-2px);filter:saturate(1.1)}.big-btn:active{transform:translateY(2px)}
+.big-btn.orange{background:#FF915F;color:white;border-bottom-color:#DF784C}
+.big-btn.purple{background:#8F7CE9;color:#fff;border-bottom-color:#7060C4}
+.big-btn.white{background:white;color:#567883;border-bottom-color:#D9E7E7}
+.hero-character{position:relative;min-height:360px;align-self:stretch}
+.hero-frog{position:absolute;right:12%;bottom:3px;width:min(85%,350px);max-height:310px;filter:drop-shadow(0 12px 9px rgba(69,145,91,.13));animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.speech-bubble{position:absolute;top:24px;right:10%;background:#fff;border-radius:25px 25px 9px 25px;padding:16px 22px;color:#548973;font-weight:1000;font-size:19px;text-align:center;line-height:1.2;box-shadow:0 10px 26px rgba(55,134,92,.13);transform:rotate(6deg);z-index:2}
+.speech-bubble span{color:#F2BA50}
+.hero-ground{position:absolute;bottom:11px;left:4%;right:5%;font-size:31px;display:flex;justify-content:space-between}
+.hero-decor{position:absolute;pointer-events:none}
+.cloud{width:105px;height:40px;border-radius:40px;background:rgba(255,255,255,.57)}
+.cloud:before{content:"";position:absolute;background:inherit;border-radius:50%;width:55px;height:55px;left:16px;bottom:9px}
+.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%;width:37px;height:37px;right:13px;bottom:9px}
+.cloud-one{top:57px;left:48%}.cloud-two{top:190px;right:2%;transform:scale(.6)}
+.sunshine{right:20px;top:18px;font-size:62px;opacity:.76}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:32px 0 18px}
+.eyebrow{font-weight:1000;letter-spacing:2px;font-size:12px;color:#70A29A}
+.section-heading h2{font-size:31px;line-height:1.2;letter-spacing:-1px;margin:4px 0 0}
+.text-button{border:0;background:transparent;color:#398C85;font-size:15px;font-weight:1000;padding:11px;white-space:nowrap}
+.world-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.world-card{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:20px 21px 17px;min-height:251px;border:4px solid rgba(255,255,255,.85);border-bottom:7px solid rgba(79,119,91,.17);border-radius:29px;color:#274B53;box-shadow:0 10px 22px rgba(51,119,127,.09);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.world-card:hover{transform:translateY(-5px);box-shadow:0 19px 30px rgba(51,119,127,.15)}
+.world-card:active{transform:translateY(1px)}
+.world-card.letters{background:linear-gradient(152deg,#BBE7FF,#CBEFFA)}
+.world-card.numbers{background:linear-gradient(152deg,#FFE1A1,#FFEDC3)}
+.world-card.shapes{background:linear-gradient(152deg,#DDD2FF,#E8E1FF)}
+.world-card.feelings{background:linear-gradient(152deg,#FFCDCD,#FFE2D5)}
+.world-decoration{position:absolute;right:24px;top:16px;font-size:43px;opacity:.4;color:white}
+.world-emoji{font-size:67px;line-height:1.15;margin-bottom:auto;filter:drop-shadow(0 5px 0 rgba(255,255,255,.5));transform:rotate(-6deg)}
+.world-title{font-size:20px;letter-spacing:-.6px;font-weight:1000;line-height:1.13;margin-top:12px}
+.world-desc{font-size:13px;color:#66848A;font-weight:800;margin-top:4px}
+.world-bottom{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:13px}
+.world-level{font-size:11px;font-weight:1000;color:#6A9393;padding:6px 10px;background:rgba(255,255,255,.66);border-radius:999px}
+.card-arrow{width:34px;height:34px;border-radius:50%;background:white;display:grid;place-items:center;font-size:22px;font-weight:1000}
+.home-footer-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0 20px}
+.note-card{border-radius:25px;background:#fff9E7;border:2px solid #FFF;display:flex;align-items:center;gap:15px;padding:19px}
+.note-card.soft{background:#EAF8E9}
+.note-icon{font-size:35px}
+.note-card strong{font-size:15px}
+.note-card p{font-size:13px;color:#6D8989;margin:4px 0 0;font-weight:700}
+.site-footer{padding:22px 0 30px;display:flex;justify-content:space-between;align-items:center;gap:15px;color:#689492;font-size:13px;font-weight:800}
+.site-footer button{border:0;background:transparent;color:#688C93;text-decoration:underline;font-size:13px;font-weight:900;padding:10px}
+.page-intro{text-align:center;padding:28px 0}
+.page-intro h1{font-weight:1000;font-size:clamp(34px,4vw,52px);line-height:1.1;letter-spacing:-2px;margin:15px 0 10px}
+.page-intro p{color:#688D94;font-size:17px;font-weight:800;margin:0}
+.map-landscape{position:relative;margin:12px 0 21px;height:490px;overflow:hidden;border-radius:43px;background:radial-gradient(circle at 30% 10%,#EFFFF2 0 6%,transparent 6.2%),radial-gradient(circle at 72% 85%,#D4F3C6 0 10%,transparent 10.2%),linear-gradient(135deg,#CBF2BF,#F3FBC4 50%,#C8ECB4);border:5px solid #fff;box-shadow:var(--shadow)}
+.map-river{position:absolute;left:46%;top:-15%;width:125px;height:130%;background:#A2E2F3;transform:rotate(27deg);border:12px solid #D8F5EA;border-radius:44% 56% 52% 48%}
+.map-spot{position:absolute;width:clamp(145px,20vw,205px);min-height:156px;border:5px solid #fff;border-bottom:9px solid rgba(0,0,0,.11);border-radius:28px;padding:10px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;color:#244C52;box-shadow:0 14px 20px rgba(52,100,82,.13);transition:transform .2s}
+.map-spot:hover{transform:scale(1.06) rotate(-2deg)}
+.map-spot strong{font-size:16px;font-weight:1000;text-align:center}.map-spot small{font-size:14px;color:#6D8B8D;font-weight:900}
+.map-sprite{font-size:60px;line-height:1.25}
+.m-one{top:6%;left:8%;background:#D8F3FC;transform:rotate(-4deg)}
+.m-two{top:11%;right:11%;background:#FFE8B0;transform:rotate(4deg)}
+.m-three{bottom:6%;left:13%;background:#E6D9FF;transform:rotate(3deg)}
+.m-four{bottom:7%;right:10%;background:#FFE0D6;transform:rotate(-4deg)}
+.land-decor{position:absolute;font-size:34px;pointer-events:none}.flower-a{left:7%;top:48%}.flower-b{right:9%;top:51%}.flower-c{left:50%;bottom:5%}
+.map-helper{display:flex;align-items:center;gap:15px;width:max-content;max-width:100%;margin:15px auto 40px;padding:7px 22px 7px 9px;background:#fff;border-radius:999px;font-weight:900;color:#52837A;box-shadow:0 6px 19px rgba(67,117,99,.08)}
+.map-helper img{width:54px}
+.sticker-summary{background:#FFEDD2;color:#8A644D;padding:17px 20px;border-radius:22px;font-size:17px;font-weight:800;text-align:center}
+.sticker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:27px 0}
+.sticker-tile{position:relative;background:white;border-radius:28px;padding:22px 13px;text-align:center;min-height:225px;border:4px solid #fff;box-shadow:0 10px 25px rgba(53,119,110,.09);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.sticker-tile.locked{background:#F2F6F1;border:4px dashed #DBE6D9}
+.sticker-tile .sticker-art{font-size:74px;line-height:1.2}
+.sticker-tile.locked .sticker-art{filter:grayscale(1);opacity:.28}
+.sticker-tile strong{font-size:17px}.sticker-tile small{font-size:12px;color:#70908D;font-weight:800}
+.sticker-tile.locked strong{color:#93A9A4}
+.sticker-footer{text-align:center;margin:13px 0 60px}
+.game-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px auto 16px;max-width:900px}
+.back-btn,.hear-btn{border:0;background:white;border-radius:16px;padding:12px 18px;color:#537F85;font-size:15px;font-weight:1000;min-height:50px}
+.hear-btn{color:#4D7D95}.game-world-label{font-weight:1000;font-size:16px;color:#638F88}
+.game-panel{max-width:900px;margin:0 auto;min-height:610px;background:rgba(255,255,255,.94);border:5px solid white;border-radius:36px;box-shadow:var(--shadow);padding:28px clamp(18px,5vw,55px) 38px}
+.game-progress{display:flex;align-items:center;gap:20px;justify-content:center}
+.game-progress-label{white-space:nowrap;font-size:13px;color:#78A4A0;font-weight:1000;letter-spacing:1px}
+.progress-dots{display:flex;gap:10px}
+.progress-dot{width:57px;height:12px;border-radius:999px;background:#E6EEE8}
+.progress-dot.done{background:#8FE0AA}.progress-dot.current{background:#FFC76F}
+.question-title-row{display:flex;gap:11px;align-items:center;justify-content:center;margin:19px 0 8px}
+.game-pip{width:105px;height:110px;object-fit:contain;flex-shrink:0}
+.question-bubble{padding:16px 24px;background:#F1F9EB;border-radius:22px 22px 22px 3px;text-align:left;min-width:0}
+.question-bubble h1{font-size:clamp(22px,3vw,34px);margin:0;line-height:1.19;letter-spacing:-1.1px}
+.question-bubble p{margin:5px 0 0;font-size:15px;color:#668881;font-weight:800}
+.question-visual{min-height:122px;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px;flex-wrap:wrap}
+.visual-count{font-size:clamp(42px,6vw,71px);display:inline-block;animation:appear .25s both}
+.visual-letter{font-size:clamp(85px,11vw,132px);font-weight:1000;line-height:1.2;color:#8671E5;text-shadow:5px 7px 0 #E5DAFA}
+.visual-feeling{font-size:100px}
+.visual-shape{width:106px;height:106px}
+.answer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:15px auto 0;max-width:720px}
+.answer-choice{border:4px solid #E8EFF1;border-bottom-width:8px;border-radius:25px;min-height:137px;padding:13px;background:#F9FBFF;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;transition:background .15s,transform .15s,border-color .15s}
+.answer-choice:hover{transform:translateY(-3px);background:#F0F8FF}.answer-choice:active{transform:translateY(1px)}
+.answer-choice.correct{background:#E5F9DC;border-color:#80D99B;color:#287A4D}
+.answer-choice.try-again{background:#FFF0DE;border-color:#FFCC94}
+.answer-choice.hint{border-color:#88D9A1;box-shadow:0 0 0 5px rgba(136,217,161,.23)}
+.answer-choice .choice-symbol{font-size:clamp(42px,6vw,74px);line-height:1.05;font-weight:1000}
+.answer-choice .choice-text{font-size:13px;color:#69878F;font-weight:900}
+.answer-choice svg{width:76px;height:76px}
+.answer-choice:disabled{opacity:1}
+.feedback{min-height:60px;display:flex;justify-content:center;align-items:center;text-align:center;font-weight:1000;font-size:19px;color:#518B77;padding:9px 0}
+.next-btn{display:flex;margin:2px auto 0;background:#8D7CE9;color:#fff;border-bottom-color:#7461C8}
+.game-footnote{text-align:center;margin:19px auto 45px;color:#72A299;font-size:14px;font-weight:900}
+.finish-panel{position:relative;max-width:700px;margin:18px auto 40px;text-align:center;border:5px solid #fff;border-radius:40px;padding:18px 30px 35px;overflow:hidden;background:linear-gradient(160deg,#E9F9D6,#FFF7D9 75%,#FBE5F4);box-shadow:var(--shadow)}
+.confetti-stars{position:absolute;inset:23px 20px auto;color:#FC9C79;font-size:24px;word-spacing:10px;opacity:.8}
+.finish-pip{display:block;width:210px;height:190px;object-fit:contain;margin:14px auto -6px}
+.finish-panel h1{font-size:clamp(35px,5vw,53px);margin:13px 0 8px;line-height:1.1;letter-spacing:-2px}
+.finish-panel p{font-weight:800;color:#648981;margin:5px 0 15px}
+.earned-sticker{display:grid;place-items:center;width:105px;height:105px;margin:10px auto;border:5px solid white;border-radius:50%;background:#FFD6A5;font-size:65px;box-shadow:0 8px 20px rgba(100,136,113,.15);animation:popIn .5s ease}
+@keyframes popIn{from{transform:scale(.6) rotate(-25deg)}to{transform:scale(1) rotate(0)}}
+.sticker-label{font-weight:1000;color:#8D6A5F;display:block}
+.finish-actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.finish-panel .rest-message{font-size:13px;color:#8A9E90;margin-top:25px}
+.grownups-dialog{max-width:550px;width:calc(100% - 28px);border:0;border-radius:25px;padding:27px;box-shadow:0 20px 90px rgba(20,40,42,.4);color:var(--ink)}
+.grownups-dialog::backdrop{background:rgba(32,64,68,.52)}
+.grownups-dialog .dialog-top{display:flex;align-items:center;justify-content:space-between}
+.grownups-dialog h2{font-size:25px;margin:0}
+.grownups-dialog p,.grownups-dialog li{font-size:14px;line-height:1.6;color:#597E7D}
+.grownups-dialog li{padding:3px 0}
+.close-dialog{width:42px;height:42px;border-radius:12px;border:0;background:#F0F5F1;font-size:18px}
+.reset-btn{display:block;width:100%;border:2px solid #FACBC3;border-radius:14px;padding:12px;background:#FFF6F3;color:#AB5555;font-weight:900;min-height:49px;margin-bottom:12px}
+.dialog-done{width:100%}
+@media(max-width:940px){
+ .site-header{gap:12px;height:92px}.logo strong{font-size:24px}.logo-flower{width:38px;font-size:43px}
+ .nav-tab{padding:11px 12px;font-size:13px}.nav-tab span:first-child{font-size:17px}
+ .world-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .world-card{min-height:220px}
+ .hero-text{padding-left:32px}.hero-text h1{font-size:clamp(40px,5.2vw,56px)}
+ .hero-frog{right:0;width:96%}
+ .sticker-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+ .app-shell{width:calc(100% - 22px)}
+ .site-header{height:auto;min-height:97px;flex-wrap:wrap;padding:14px 2px 10px;gap:9px}
+ .logo strong{font-size:24px}.logo small{font-size:8px;letter-spacing:1.7px}
+ .header-actions{margin-left:auto}.star-count{font-size:16px;padding:9px 11px}.sound-btn{width:45px;height:45px;font-size:23px}
+ .nav-tabs{order:3;flex:1;width:100%;justify-content:space-around;padding:5px}
+ .nav-tab{flex:1;padding:10px 5px;font-size:14px;min-height:44px}
+ .hero-card{display:flex;flex-direction:column;min-height:480px;border-radius:32px;text-align:center}
+ .hero-text{padding:27px 15px 0;z-index:2}
+ .hero-text h1{font-size:clamp(39px,10vw,53px);letter-spacing:-2px;margin:13px 0 8px}
+ .hero-text p{font-size:15px;margin-bottom:16px}
+ .hero-text .pill{font-size:9px;letter-spacing:.75px}
+ .hero-character{min-height:200px;align-self:stretch}
+ .hero-frog{width:210px;max-height:203px;bottom:0;right:15%}
+ .speech-bubble{font-size:14px;top:12px;right:4%;padding:9px 12px}
+ .hero-ground{font-size:22px}
+ .cloud-one{left:8%;top:220px}
+ .section-heading{margin:29px 4px 17px}.section-heading h2{font-size:24px}.eyebrow{font-size:10px}
+ .text-button{font-size:12px}
+ .world-grid{gap:9px}
+ .world-card{padding:14px 13px 12px;min-height:205px;border-radius:24px}
+ .world-emoji{font-size:52px}.world-title{font-size:17px}.world-desc{font-size:11px}
+ .world-level{font-size:10px;padding:4px 7px}.card-arrow{width:28px;height:28px;font-size:18px}
+ .home-footer-row{grid-template-columns:1fr;gap:10px;margin-top:18px}
+ .note-card{padding:14px}.note-card p{font-size:12px}
+ .page-intro{padding:23px 6px}.page-intro h1{font-size:34px}
+ .map-landscape{height:580px;border-radius:31px;margin:5px 0}
+ .map-river{width:90px;left:38%}
+ .map-spot{width:44%;min-height:158px;border-radius:24px}
+ .map-sprite{font-size:52px}.map-spot strong{font-size:14px}
+ .m-one{left:3%;top:8%}.m-two{right:3%;top:22%}.m-three{left:3%;bottom:21%}.m-four{right:3%;bottom:4%}
+ .flower-a{top:44%;left:3%}.flower-b{top:58%;right:6%}
+ .map-helper{font-size:12px;border-radius:23px}
+ .sticker-grid{gap:11px}.sticker-tile{min-height:180px;padding:12px 6px}.sticker-tile .sticker-art{font-size:61px}.sticker-tile strong{font-size:14px}
+ .game-topline{margin-top:16px;gap:7px}.back-btn,.hear-btn{font-size:12px;padding:11px 8px}.game-world-label{font-size:12px;text-align:center}
+ .game-panel{min-height:550px;padding:20px 12px 27px;border-radius:27px}
+ .progress-dot{width:34px;height:10px}.game-progress{gap:12px}
+ .question-title-row{gap:2px}.game-pip{width:75px;height:88px}
+ .question-bubble{padding:15px 14px}.question-bubble h1{font-size:23px;letter-spacing:-.7px}.question-bubble p{font-size:12px}
+ .question-visual{min-height:125px;gap:5px}.visual-count{font-size:48px}.visual-feeling{font-size:88px}
+ .answer-grid{gap:7px}.answer-choice{min-height:119px;padding:7px 3px;border-radius:19px}
+ .answer-choice .choice-symbol{font-size:49px}.answer-choice .choice-text{font-size:11px}.answer-choice svg{width:65px;height:65px}
+ .feedback{font-size:16px}
+ .next-btn{font-size:15px}
+ .finish-panel{padding:16px 13px 26px;border-radius:29px}.finish-actions{display:grid;gap:10px}.finish-actions .big-btn{width:100%}
+ .site-footer{font-size:11px;padding-bottom:23px}
+}
+@media(max-width:365px){
+ .hero-text h1{font-size:37px}.world-title{font-size:15px}
+ .world-card{padding:11px;min-height:197px}
+ .answer-choice .choice-symbol{font-size:40px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+
+/* Tactile tap-to-count interaction: each object changes when tapped. */
+.count-play-area{width:100%;display:flex;flex-direction:column;align-items:center;gap:7px}
+.count-hint{font-size:13px;color:#7BA09A;font-weight:1000}
+.count-items{display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
+.count-items .visual-count{position:relative;border:2px solid transparent;background:transparent;border-radius:16px;padding:1px 3px;line-height:1.1;min-width:55px;min-height:62px;transition:transform .16s,background .16s}
+.count-items .visual-count:hover{background:#F0F8E8;transform:translateY(-3px)}
+.count-items .visual-count.tapped{background:#E4F7DB;border-color:#ADDE97;filter:saturate(.7);transform:scale(.92)}
+.count-items .visual-count.tapped:after{content:"✓";position:absolute;right:0;top:0;color:#2B9D5E;font-size:23px;text-shadow:0 1px white}
+.count-counter{font-size:14px;color:#65A489;font-weight:1000;min-height:21px}
+.answer-choice.correct{animation:popIn .28s ease}
+@media(max-width:620px){
+  .count-items .visual-count{min-width:48px;min-height:55px;font-size:44px}
+  .count-hint{font-size:12px}
+}
+</style>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to activities</a>
+  <div class="sky-sprinkles" aria-hidden="true"><span>✦</span><span>✿</span><span>★</span><span>✦</span><span>✿</span></div>
+  <div class="app-shell">
+    <header class="site-header">
+      <button class="logo" type="button" data-page="home" aria-label="SkillSpring home">
+        <span class="logo-flower">✿</span>
+        <span><strong>skill<span>spring</span></strong><small>LITTLE EXPLORERS</small></span>
+      </button>
+      <nav class="nav-tabs" aria-label="Where to go">
+        <button type="button" data-page="home" class="nav-tab current" aria-current="page"><span aria-hidden="true">🏡</span> <span>Home</span></button>
+        <button type="button" data-page="map" class="nav-tab"><span aria-hidden="true">🗺️</span> <span>Worlds</span></button>
+        <button type="button" data-page="stickers" class="nav-tab"><span aria-hidden="true">🌟</span> <span>Stickers</span></button>
+      </nav>
+      <div class="header-actions">
+        <span class="star-count" aria-label="Stars earned"><span aria-hidden="true">⭐</span><span id="headerStars">0</span></span>
+        <button type="button" class="sound-btn" id="soundBtn" aria-label="Turn spoken instructions off" aria-pressed="true" title="Toggle spoken instructions">🔊</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="homePage" class="page" aria-labelledby="homeTitle">
+        <div class="hero-card">
+          <div class="hero-decor cloud cloud-one" aria-hidden="true"></div>
+          <div class="hero-decor cloud cloud-two" aria-hidden="true"></div>
+          <div class="hero-decor sunshine" aria-hidden="true"><span>☀️</span></div>
+          <div class="hero-text">
+            <span class="pill">🌈 BIG FUN FOR LITTLE LEARNERS</span>
+            <h1 id="homeTitle">Every little<br><em>step is magic!</em></h1>
+            <p>Tap, play, discover, and grow with Pip!</p>
+            <button type="button" class="big-btn orange" id="surpriseBtn">🎲 Surprise me! <span aria-hidden="true">➜</span></button>
+          </div>
+          <div class="hero-character">
+            <div class="speech-bubble">Hi, explorer!<br>Let's play! <span>💛</span></div>
+            <img class="hero-frog" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDEwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUiPgo8dGl0bGUgaWQ9InRpdGxlIj5QaXAgdGhlIGNoZWVyZnVsIGdyZWVuIGZyb2c8L3RpdGxlPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNBM0YyNzEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1OUNFNzUiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJiZWxseSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNGOEZGRDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEOEY0QUIiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIyMDgiIGN5PSIzODMiIHJ4PSIxNDciIHJ5PSIxOCIgZmlsbD0iIzNGOEM2OSIgb3BhY2l0eT0iLjE2Ii8+CjxwYXRoIGQ9Ik0xMTAgMjYzQzczIDI3MyA1NiAzMTIgODcgMzM1YzI3IDE3IDU3IDIgODEtMTRNMzA5IDI2MmM0MSA5IDYxIDQ4IDMxIDcwLTI1IDE5LTYxIDgtODctOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjVDQzZGIiBzdHJva2Utd2lkdGg9IjM5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjIxMSIgY3k9IjI4MSIgcng9IjExNSIgcnk9IjEwMiIgZmlsbD0idXJsKCNza2luKSIvPgo8ZWxsaXBzZSBjeD0iMjEwIiBjeT0iMjk3IiByeD0iNzQiIHJ5PSI2NyIgZmlsbD0idXJsKCNiZWxseSkiLz4KPHBhdGggZD0iTTE0NCAzNTZxLTM1IDM3LTcxIDEwTTI3MiAzNTZxMzUgMzcgNzEgMTAiIHN0cm9rZT0iIzU5QkM2NiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjEyOCIgY3k9IjExMiIgcj0iNDUiIGZpbGw9InVybCgjc2tpbikiLz48Y2lyY2xlIGN4PSIyOTAiIGN5PSIxMTIiIHI9IjQ1IiBmaWxsPSJ1cmwoI3NraW4pIi8+CjxlbGxpcHNlIGN4PSIyMDkiIGN5PSIxNzQiIHJ4PSIxNDgiIHJ5PSIxMTgiIGZpbGw9InVybCgjc2tpbikiLz4KPGVsbGlwc2UgY3g9IjEzMyIgY3k9IjEyMSIgcng9IjI4IiByeT0iMzUiIGZpbGw9IiNmZmYiLz48ZWxsaXBzZSBjeD0iMjg2IiBjeT0iMTIxIiByeD0iMjgiIHJ5PSIzNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iMTI0IiByeD0iMTMiIHJ5PSIxOCIgZmlsbD0iIzI1NEQzRCIvPjxlbGxpcHNlIGN4PSIyODAiIGN5PSIxMjQiIHJ4PSIxMyIgcnk9IjE4IiBmaWxsPSIjMjU0RDNEIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjI4NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTUwIiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz48ZWxsaXBzZSBjeD0iMjY5IiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz4KPHBhdGggZD0iTTE3NSAyMDdxMzUgNDEgNzAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ3QjUyIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZWxsaXBzZSBjeD0iMTA0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz48ZWxsaXBzZSBjeD0iMzE0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz4KPHBhdGggZD0iTTE2NCAzOWMxOC0yNiAzNS0xNyA0NS0xIDExLTE4IDMyLTI0IDQ3IDEtMjYgNy00OSAyNi00NyAyNnMtMzAtMjAtNDUtMjYiIGZpbGw9IiNGRkNENjIiIHN0cm9rZT0iI0ZGQTg1RCIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0zMTggMjU2cTQ5LTkgNTYtNDciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjM3MCIgY3k9IjIwOSIgcj0iMjEiIGZpbGw9IiM2NUNDNkYiLz4KPHBhdGggZD0iTTM2NyAxODdsLTctMTVNMzgxIDE5NGwxMy0xMU0zOTAgMjE0bDE3IDEiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="Pip the happy green frog waving hello">
+            <div class="hero-ground" aria-hidden="true"><span>🌷</span><span>🌼</span><span>🌱</span></div>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">CHOOSE AN ADVENTURE</span><h2>Where shall we play?</h2></div>
+          <button class="text-button" type="button" data-page="map">See all worlds <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="world-grid">
+          <button class="world-card letters" data-world="letters" type="button" aria-label="Play Letter Lagoon">
+            <span class="world-decoration" aria-hidden="true">✦</span>
+            <span class="world-emoji" aria-hidden="true">🦜</span>
+            <span class="world-title">Letter Lagoon</span>
+            <span class="world-desc">Letters & sounds</span>
+            <span class="world-bottom"><span class="world-level" data-level="letters">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card numbers" data-world="numbers" type="button" aria-label="Play Counting Garden">
+            <span class="world-decoration" aria-hidden="true">✿</span>
+            <span class="world-emoji" aria-hidden="true">🍎</span>
+            <span class="world-title">Counting Garden</span>
+            <span class="world-desc">Numbers & counting</span>
+            <span class="world-bottom"><span class="world-level" data-level="numbers">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card shapes" data-world="shapes" type="button" aria-label="Play Shape Safari">
+            <span class="world-decoration" aria-hidden="true">✧</span>
+            <span class="world-emoji" aria-hidden="true">🧩</span>
+            <span class="world-title">Shape Safari</span>
+            <span class="world-desc">Shapes & patterns</span>
+            <span class="world-bottom"><span class="world-level" data-level="shapes">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card feelings" data-world="feelings" type="button" aria-label="Play Feelings Forest">
+            <span class="world-decoration" aria-hidden="true">♥</span>
+            <span class="world-emoji" aria-hidden="true">🦊</span>
+            <span class="world-title">Feelings Forest</span>
+            <span class="world-desc">Faces & feelings</span>
+            <span class="world-bottom"><span class="world-level" data-level="feelings">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+
+        <div class="home-footer-row">
+          <div class="note-card"><span class="note-icon">💚</span><div><strong>Little adventures. Big discoveries.</strong><p>Each playtime has just 4 quick questions. It's always okay to take a break!</p></div></div>
+          <div class="note-card soft"><span class="note-icon">🪴</span><div><strong>Learn at your own pace</strong><p>No timers, no losing, and no one gets left behind.</p></div></div>
+        </div>
+      </section>
+
+      <section id="mapPage" class="page" hidden aria-labelledby="mapTitle">
+        <div class="page-intro"><span class="pill">🗺️ THE ADVENTURE MAP</span><h1 id="mapTitle">A world of little wonders</h1><p>Pick a world to explore with Pip.</p></div>
+        <div class="map-landscape" aria-label="Map of four learning worlds">
+          <div class="map-river" aria-hidden="true"></div>
+          <button type="button" class="map-spot m-one" data-world="letters"><span class="map-sprite" aria-hidden="true">🦜</span><strong>Letter Lagoon</strong><small>ABC</small></button>
+          <button type="button" class="map-spot m-two" data-world="numbers"><span class="map-sprite" aria-hidden="true">🍎</span><strong>Counting Garden</strong><small>123</small></button>
+          <button type="button" class="map-spot m-three" data-world="shapes"><span class="map-sprite" aria-hidden="true">🧩</span><strong>Shape Safari</strong><small>◯ △ □</small></button>
+          <button type="button" class="map-spot m-four" data-world="feelings"><span class="map-sprite" aria-hidden="true">🦊</span><strong>Feelings Forest</strong><small>☺ ♥</small></button>
+          <span class="land-decor flower-a" aria-hidden="true">🌸</span><span class="land-decor flower-b" aria-hidden="true">🌻</span><span class="land-decor flower-c" aria-hidden="true">🌷</span>
+        </div>
+        <div class="map-helper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDEwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUiPgo8dGl0bGUgaWQ9InRpdGxlIj5QaXAgdGhlIGNoZWVyZnVsIGdyZWVuIGZyb2c8L3RpdGxlPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNBM0YyNzEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1OUNFNzUiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJiZWxseSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNGOEZGRDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEOEY0QUIiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIyMDgiIGN5PSIzODMiIHJ4PSIxNDciIHJ5PSIxOCIgZmlsbD0iIzNGOEM2OSIgb3BhY2l0eT0iLjE2Ii8+CjxwYXRoIGQ9Ik0xMTAgMjYzQzczIDI3MyA1NiAzMTIgODcgMzM1YzI3IDE3IDU3IDIgODEtMTRNMzA5IDI2MmM0MSA5IDYxIDQ4IDMxIDcwLTI1IDE5LTYxIDgtODctOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjVDQzZGIiBzdHJva2Utd2lkdGg9IjM5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjIxMSIgY3k9IjI4MSIgcng9IjExNSIgcnk9IjEwMiIgZmlsbD0idXJsKCNza2luKSIvPgo8ZWxsaXBzZSBjeD0iMjEwIiBjeT0iMjk3IiByeD0iNzQiIHJ5PSI2NyIgZmlsbD0idXJsKCNiZWxseSkiLz4KPHBhdGggZD0iTTE0NCAzNTZxLTM1IDM3LTcxIDEwTTI3MiAzNTZxMzUgMzcgNzEgMTAiIHN0cm9rZT0iIzU5QkM2NiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjEyOCIgY3k9IjExMiIgcj0iNDUiIGZpbGw9InVybCgjc2tpbikiLz48Y2lyY2xlIGN4PSIyOTAiIGN5PSIxMTIiIHI9IjQ1IiBmaWxsPSJ1cmwoI3NraW4pIi8+CjxlbGxpcHNlIGN4PSIyMDkiIGN5PSIxNzQiIHJ4PSIxNDgiIHJ5PSIxMTgiIGZpbGw9InVybCgjc2tpbikiLz4KPGVsbGlwc2UgY3g9IjEzMyIgY3k9IjEyMSIgcng9IjI4IiByeT0iMzUiIGZpbGw9IiNmZmYiLz48ZWxsaXBzZSBjeD0iMjg2IiBjeT0iMTIxIiByeD0iMjgiIHJ5PSIzNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iMTI0IiByeD0iMTMiIHJ5PSIxOCIgZmlsbD0iIzI1NEQzRCIvPjxlbGxpcHNlIGN4PSIyODAiIGN5PSIxMjQiIHJ4PSIxMyIgcnk9IjE4IiBmaWxsPSIjMjU0RDNEIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjI4NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTUwIiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz48ZWxsaXBzZSBjeD0iMjY5IiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz4KPHBhdGggZD0iTTE3NSAyMDdxMzUgNDEgNzAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ3QjUyIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZWxsaXBzZSBjeD0iMTA0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz48ZWxsaXBzZSBjeD0iMzE0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz4KPHBhdGggZD0iTTE2NCAzOWMxOC0yNiAzNS0xNyA0NS0xIDExLTE4IDMyLTI0IDQ3IDEtMjYgNy00OSAyNi00NyAyNnMtMzAtMjAtNDUtMjYiIGZpbGw9IiNGRkNENjIiIHN0cm9rZT0iI0ZGQTg1RCIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0zMTggMjU2cTQ5LTkgNTYtNDciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjM3MCIgY3k9IjIwOSIgcj0iMjEiIGZpbGw9IiM2NUNDNkYiLz4KPHBhdGggZD0iTTM2NyAxODdsLTctMTVNMzgxIDE5NGwxMy0xMU0zOTAgMjE0bDE3IDEiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true"><span>All worlds are open! Choose the one that looks fun.</span></div>
+      </section>
+
+      <section id="stickersPage" class="page" hidden aria-labelledby="stickersTitle">
+        <div class="page-intro"><span class="pill">🌟 MY HAPPY COLLECTION</span><h1 id="stickersTitle">Your sticker garden!</h1><p>Finish a little adventure to earn a sticker.</p></div>
+        <div class="sticker-summary"><span aria-hidden="true">🎉</span> <strong id="stickerSummary">No stickers yet — your first adventure awaits!</strong></div>
+        <div class="sticker-grid" id="stickerGrid"></div>
+        <div class="sticker-footer"><button type="button" class="big-btn purple" data-page="home">🏡 Let's play some more</button></div>
+      </section>
+
+      <section id="gamePage" class="page" hidden aria-labelledby="gameTitle">
+        <div class="game-topline">
+          <button type="button" class="back-btn" data-page="home" aria-label="Leave this game and return home">← Home</button>
+          <span id="gameWorldLabel" class="game-world-label">Little Adventure</span>
+          <button type="button" class="hear-btn" id="hearAgain" aria-label="Hear the question again">🔊 Hear again</button>
+        </div>
+        <div class="game-panel">
+          <div class="game-progress" aria-label="Question progress">
+            <span class="game-progress-label" id="roundLabel">1 of 4</span>
+            <div class="progress-dots" id="progressDots" aria-hidden="true"></div>
+          </div>
+          <div class="question-title-row">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDEwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUiPgo8dGl0bGUgaWQ9InRpdGxlIj5QaXAgdGhlIGNoZWVyZnVsIGdyZWVuIGZyb2c8L3RpdGxlPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNBM0YyNzEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1OUNFNzUiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJiZWxseSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNGOEZGRDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEOEY0QUIiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIyMDgiIGN5PSIzODMiIHJ4PSIxNDciIHJ5PSIxOCIgZmlsbD0iIzNGOEM2OSIgb3BhY2l0eT0iLjE2Ii8+CjxwYXRoIGQ9Ik0xMTAgMjYzQzczIDI3MyA1NiAzMTIgODcgMzM1YzI3IDE3IDU3IDIgODEtMTRNMzA5IDI2MmM0MSA5IDYxIDQ4IDMxIDcwLTI1IDE5LTYxIDgtODctOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjVDQzZGIiBzdHJva2Utd2lkdGg9IjM5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjIxMSIgY3k9IjI4MSIgcng9IjExNSIgcnk9IjEwMiIgZmlsbD0idXJsKCNza2luKSIvPgo8ZWxsaXBzZSBjeD0iMjEwIiBjeT0iMjk3IiByeD0iNzQiIHJ5PSI2NyIgZmlsbD0idXJsKCNiZWxseSkiLz4KPHBhdGggZD0iTTE0NCAzNTZxLTM1IDM3LTcxIDEwTTI3MiAzNTZxMzUgMzcgNzEgMTAiIHN0cm9rZT0iIzU5QkM2NiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjEyOCIgY3k9IjExMiIgcj0iNDUiIGZpbGw9InVybCgjc2tpbikiLz48Y2lyY2xlIGN4PSIyOTAiIGN5PSIxMTIiIHI9IjQ1IiBmaWxsPSJ1cmwoI3NraW4pIi8+CjxlbGxpcHNlIGN4PSIyMDkiIGN5PSIxNzQiIHJ4PSIxNDgiIHJ5PSIxMTgiIGZpbGw9InVybCgjc2tpbikiLz4KPGVsbGlwc2UgY3g9IjEzMyIgY3k9IjEyMSIgcng9IjI4IiByeT0iMzUiIGZpbGw9IiNmZmYiLz48ZWxsaXBzZSBjeD0iMjg2IiBjeT0iMTIxIiByeD0iMjgiIHJ5PSIzNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iMTI0IiByeD0iMTMiIHJ5PSIxOCIgZmlsbD0iIzI1NEQzRCIvPjxlbGxpcHNlIGN4PSIyODAiIGN5PSIxMjQiIHJ4PSIxMyIgcnk9IjE4IiBmaWxsPSIjMjU0RDNEIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjI4NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTUwIiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz48ZWxsaXBzZSBjeD0iMjY5IiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz4KPHBhdGggZD0iTTE3NSAyMDdxMzUgNDEgNzAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ3QjUyIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZWxsaXBzZSBjeD0iMTA0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz48ZWxsaXBzZSBjeD0iMzE0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz4KPHBhdGggZD0iTTE2NCAzOWMxOC0yNiAzNS0xNyA0NS0xIDExLTE4IDMyLTI0IDQ3IDEtMjYgNy00OSAyNi00NyAyNnMtMzAtMjAtNDUtMjYiIGZpbGw9IiNGRkNENjIiIHN0cm9rZT0iI0ZGQTg1RCIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0zMTggMjU2cTQ5LTkgNTYtNDciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjM3MCIgY3k9IjIwOSIgcj0iMjEiIGZpbGw9IiM2NUNDNkYiLz4KPHBhdGggZD0iTTM2NyAxODdsLTctMTVNMzgxIDE5NGwxMy0xMU0zOTAgMjE0bDE3IDEiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" class="game-pip">
+            <div class="question-bubble"><h1 id="gameTitle">Let's play!</h1><p id="gamePrompt">Tap the answer.</p></div>
+          </div>
+          <div id="questionVisual" class="question-visual" aria-hidden="true"></div>
+          <div id="answerGrid" class="answer-grid" role="group" aria-label="Answer choices"></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+          <button type="button" class="big-btn next-btn" id="nextBtn" hidden>Next adventure step ➜</button>
+        </div>
+        <div class="game-footnote">🌱 Trying is learning. There are no wrong turns!</div>
+      </section>
+
+      <section id="finishPage" class="page" hidden aria-labelledby="finishTitle">
+        <div class="finish-panel">
+          <div class="confetti-stars" aria-hidden="true">✦ 🌸 ✦ ⭐ ✧ 🌼 ✦</div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDEwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUiPgo8dGl0bGUgaWQ9InRpdGxlIj5QaXAgdGhlIGNoZWVyZnVsIGdyZWVuIGZyb2c8L3RpdGxlPgo8ZGVmcz4KIDxsaW5lYXJHcmFkaWVudCBpZD0ic2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNBM0YyNzEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1OUNFNzUiLz48L2xpbmVhckdyYWRpZW50PgogPGxpbmVhckdyYWRpZW50IGlkPSJiZWxseSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNGOEZGRDMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNEOEY0QUIiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIyMDgiIGN5PSIzODMiIHJ4PSIxNDciIHJ5PSIxOCIgZmlsbD0iIzNGOEM2OSIgb3BhY2l0eT0iLjE2Ii8+CjxwYXRoIGQ9Ik0xMTAgMjYzQzczIDI3MyA1NiAzMTIgODcgMzM1YzI3IDE3IDU3IDIgODEtMTRNMzA5IDI2MmM0MSA5IDYxIDQ4IDMxIDcwLTI1IDE5LTYxIDgtODctOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjVDQzZGIiBzdHJva2Utd2lkdGg9IjM5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGVsbGlwc2UgY3g9IjIxMSIgY3k9IjI4MSIgcng9IjExNSIgcnk9IjEwMiIgZmlsbD0idXJsKCNza2luKSIvPgo8ZWxsaXBzZSBjeD0iMjEwIiBjeT0iMjk3IiByeD0iNzQiIHJ5PSI2NyIgZmlsbD0idXJsKCNiZWxseSkiLz4KPHBhdGggZD0iTTE0NCAzNTZxLTM1IDM3LTcxIDEwTTI3MiAzNTZxMzUgMzcgNzEgMTAiIHN0cm9rZT0iIzU5QkM2NiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjEyOCIgY3k9IjExMiIgcj0iNDUiIGZpbGw9InVybCgjc2tpbikiLz48Y2lyY2xlIGN4PSIyOTAiIGN5PSIxMTIiIHI9IjQ1IiBmaWxsPSJ1cmwoI3NraW4pIi8+CjxlbGxpcHNlIGN4PSIyMDkiIGN5PSIxNzQiIHJ4PSIxNDgiIHJ5PSIxMTgiIGZpbGw9InVybCgjc2tpbikiLz4KPGVsbGlwc2UgY3g9IjEzMyIgY3k9IjEyMSIgcng9IjI4IiByeT0iMzUiIGZpbGw9IiNmZmYiLz48ZWxsaXBzZSBjeD0iMjg2IiBjeT0iMTIxIiByeD0iMjgiIHJ5PSIzNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTQwIiBjeT0iMTI0IiByeD0iMTMiIHJ5PSIxOCIgZmlsbD0iIzI1NEQzRCIvPjxlbGxpcHNlIGN4PSIyODAiIGN5PSIxMjQiIHJ4PSIxMyIgcnk9IjE4IiBmaWxsPSIjMjU0RDNEIi8+CjxjaXJjbGUgY3g9IjE0NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjI4NCIgY3k9IjExOCIgcj0iNSIgZmlsbD0iI2ZmZiIvPgo8ZWxsaXBzZSBjeD0iMTUwIiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz48ZWxsaXBzZSBjeD0iMjY5IiBjeT0iMTkxIiByeD0iOCIgcnk9IjYiIGZpbGw9IiMzOThCNTUiLz4KPHBhdGggZD0iTTE3NSAyMDdxMzUgNDEgNzAgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzQ3QjUyIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZWxsaXBzZSBjeD0iMTA0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz48ZWxsaXBzZSBjeD0iMzE0IiBjeT0iMjA5IiByeD0iMjkiIHJ5PSIxNiIgZmlsbD0iI0ZGOUJCNyIgb3BhY2l0eT0iLjciLz4KPHBhdGggZD0iTTE2NCAzOWMxOC0yNiAzNS0xNyA0NS0xIDExLTE4IDMyLTI0IDQ3IDEtMjYgNy00OSAyNi00NyAyNnMtMzAtMjAtNDUtMjYiIGZpbGw9IiNGRkNENjIiIHN0cm9rZT0iI0ZGQTg1RCIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0zMTggMjU2cTQ5LTkgNTYtNDciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxjaXJjbGUgY3g9IjM3MCIgY3k9IjIwOSIgcj0iMjEiIGZpbGw9IiM2NUNDNkYiLz4KPHBhdGggZD0iTTM2NyAxODdsLTctMTVNMzgxIDE5NGwxMy0xMU0zOTAgMjE0bDE3IDEiIHN0cm9rZT0iIzY1Q0M2RiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="" aria-hidden="true" class="finish-pip">
+          <span class="pill">YOU DID IT!</span>
+          <h1 id="finishTitle">Hip hip hooray!</h1>
+          <p id="finishMessage">You tried four fun things. Pip is proud of you!</p>
+          <div class="earned-sticker" id="earnedSticker" aria-label="Sticker you earned">🌈</div>
+          <span id="stickerLabel" class="sticker-label">Rainbow Explorer Sticker</span>
+          <div class="finish-actions">
+            <button type="button" class="big-btn orange" data-page="stickers">🌟 See my stickers</button>
+            <button type="button" class="big-btn white" data-page="home">🏡 All done for now</button>
+          </div>
+          <p class="rest-message">🌼 Time for a stretch, a snack, or a real-world adventure!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>🌼 Made for curious little minds.</span>
+      <button id="grownupsBtn" type="button">For grown-ups ⚙️</button>
+    </footer>
+  </div>
+
+  <dialog id="grownupsDialog" class="grownups-dialog" aria-labelledby="grownupsTitle">
+    <form method="dialog" class="dialog-top"><h2 id="grownupsTitle">👋 Hello, grown-up!</h2><button class="close-dialog" aria-label="Close grown-ups guide">✕</button></form>
+    <p>SkillSpring is a small, screen-time-friendly learning prototype for ages roughly 3–7. You can play together and talk about the questions.</p>
+    <ul>
+      <li>Each adventure is four short questions with a natural ending.</li>
+      <li>Spoken prompts can be turned on or off with the speaker button.</li>
+      <li>No account, chat, advertising, third-party analytics, or remote AI service.</li>
+      <li>Stars, stickers, and learning progress are stored only in this browser, if available.</li>
+      <li>Question difficulty gently adjusts with practice. This is not a diagnostic assessment.</li>
+    </ul>
+    <p><strong>Tip:</strong> For pre-readers, tap the speaker 🔊 after opening a game. iPad browsers may require a tap before audio starts.</p>
+    <button type="button" class="reset-btn" id="resetProgress">Reset progress on this device</button>
+    <button type="button" class="big-btn purple dialog-done" id="closeGrownups">Done ✓</button>
+  </dialog>
+<script>
+(() => {
+  "use strict";
+  const STORAGE_KEY = "skillspring-little-explorers-v1";
+  const TOTAL_ROUNDS = 4;
+  const worldInfo = {
+    letters: { title:"Letter Lagoon", emoji:"🦜", stickers:["🦜","🌺","🛶"], names:["Parrot Pal","Lagoon Flower","Little Canoe"] },
+    numbers: { title:"Counting Garden", emoji:"🍎", stickers:["🍎","🐝","🌻"], names:["Apple Buddy","Busy Bee","Golden Sunflower"] },
+    shapes: { title:"Shape Safari", emoji:"🧩", stickers:["🦋","⭐","🪁"], names:["Butterfly Buddy","Shining Star","Colorful Kite"] },
+    feelings:{ title:"Feelings Forest", emoji:"🦊", stickers:["🦊","💗","🌈"], names:["Fox Friend","Kind Heart","Rainbow Smile"] }
+  };
+  const levelNames = ["Little Seed","Growing Sprout","Super Sprout"];
+  const LETTERS = [
+    {letter:"A", lower:"a", picture:"🍎", word:"apple", sound:"a"},
+    {letter:"B", lower:"b", picture:"🐻", word:"bear", sound:"b"},
+    {letter:"C", lower:"c", picture:"🐱", word:"cat", sound:"k"},
+    {letter:"D", lower:"d", picture:"🐶", word:"dog", sound:"d"},
+    {letter:"F", lower:"f", picture:"🐟", word:"fish", sound:"f"},
+    {letter:"M", lower:"m", picture:"🌙", word:"moon", sound:"m"},
+    {letter:"S", lower:"s", picture:"☀️", word:"sun", sound:"s"}
+  ];
+  const SHAPES = ["circle","triangle","square","star","rectangle","heart"];
+  const FACES = [
+    { id:"happy", emoji:"😊", label:"happy" },
+    { id:"sad", emoji:"😢", label:"sad" },
+    { id:"surprised", emoji:"😮", label:"surprised" },
+    { id:"angry", emoji:"😠", label:"angry" },
+    { id:"sleepy", emoji:"😴", label:"sleepy" },
+    { id:"silly", emoji:"😜", label:"silly" }
+  ];
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => [...document.querySelectorAll(sel)];
+  const rand = (n) => Math.floor(Math.random() * n);
+  const sample = (items) => items[rand(items.length)];
+  const shuffle = (items) => {
+    const result = [...items];
+    for(let i=result.length-1;i>0;i--){
+      const j=rand(i+1);
+      [result[i],result[j]]=[result[j],result[i]];
+    }
+    return result;
+  };
+  const escapeHTML = (value) => String(value).replace(/[&<>"']/g,(char)=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[char]);
+  function defaultProgress(){
+    return {
+      stars:0, sound:true, stickers:[],
+      worlds:Object.fromEntries(Object.keys(worldInfo).map(w=>[w,{level:1,history:[],completed:0}]))
+    };
+  }
+  function loadProgress(){
+    const empty=defaultProgress();
+    try{
+      const raw=JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+      if(!raw || typeof raw!=="object") return empty;
+      empty.stars=Number.isFinite(raw.stars)?Math.max(0,Math.min(99999,Math.floor(raw.stars))):0;
+      empty.sound=typeof raw.sound==="boolean"?raw.sound:true;
+      empty.stickers=Array.isArray(raw.stickers)?raw.stickers.filter(v=>typeof v==="string" && /^[a-z]+-[123]$/.test(v)): [];
+      for(const name of Object.keys(worldInfo)){
+        const saved=raw.worlds?.[name];
+        if(!saved) continue;
+        empty.worlds[name].level=[1,2,3].includes(saved.level)?saved.level:1;
+        empty.worlds[name].history=Array.isArray(saved.history)?saved.history.slice(-6).filter(v=>typeof v==="boolean"):[];
+        empty.worlds[name].completed=Number.isInteger(saved.completed)?Math.max(0,Math.min(9999,saved.completed)):0;
+      }
+    }catch(_error){ /* private browsing and blocked storage are supported */ }
+    return empty;
+  }
+  let progress=loadProgress();
+  let currentPage="home";
+  let currentWorld=null;
+  let round=0;
+  let question=null;
+  let mistakes=0;
+  let resolved=false;
+  let usedQuestions=new Set();
+
+  function save(){
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify(progress));}catch(_error){}
+  }
+  function say(text){
+    if(!progress.sound || !("speechSynthesis" in window)) return;
+    try{
+      speechSynthesis.cancel();
+      const utterance=new SpeechSynthesisUtterance(text);
+      utterance.lang="en-US";
+      utterance.rate=.84;
+      utterance.pitch=1.12;
+      utterance.volume=1;
+      speechSynthesis.speak(utterance);
+    }catch(_error){ /* speech is optional */ }
+  }
+  function stopSpeech(){
+    if("speechSynthesis" in window){try{speechSynthesis.cancel();}catch(_error){}}
+  }
+  function updateChrome(){
+    $("#headerStars").textContent=progress.stars.toLocaleString();
+    $("#soundBtn").textContent=progress.sound?"🔊":"🔇";
+    $("#soundBtn").setAttribute("aria-label",progress.sound?"Turn spoken instructions off":"Turn spoken instructions on");
+    $("#soundBtn").setAttribute("aria-pressed",String(progress.sound));
+    for(const [name,state] of Object.entries(progress.worlds)){
+      const target=document.querySelector(`[data-level="${name}"]`);
+      if(target) target.textContent=levelNames[state.level-1];
+    }
+  }
+  function showPage(name){
+    if(!["home","map","stickers","game","finish"].includes(name)) return;
+    if(name!=="game") stopSpeech();
+    currentPage=name;
+    $$(".page").forEach(page=>{page.hidden=page.id!==(name+"Page");});
+    $$(".nav-tab").forEach(btn=>{
+      const selected=btn.dataset.page===name;
+      btn.classList.toggle("current",selected);
+      if(selected) btn.setAttribute("aria-current","page");
+      else btn.removeAttribute("aria-current");
+    });
+    if(name==="stickers") drawStickers();
+    updateChrome();
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+  function choicesAround(correct, pool, count=3){
+    return shuffle([correct,...shuffle(pool.filter(v=>v!==correct)).slice(0,count-1)]);
+  }
+  function avoidRepeat(candidates, key){
+    const fresh=candidates.filter(item=>!usedQuestions.has(key(item)));
+    const selection=sample(fresh.length?fresh:candidates);
+    usedQuestions.add(key(selection));
+    return selection;
+  }
+  function letterQuestion(level){
+    const item=avoidRepeat(LETTERS,v=>v.letter);
+    const remaining=LETTERS.map(i=>i.letter);
+    if(level===1){
+      return {
+        title:"Find my letter!",
+        prompt:`Tap the letter ${item.letter}`,
+        spoken:`Can you find the letter ${item.letter}? Tap it!`,
+        visual:{kind:"letter",value:item.letter},
+        options:choicesAround(item.letter,remaining).map(v=>({id:v,symbol:v,text:""})),
+        correct:item.letter,
+        hint:`Look for ${item.letter}.`
+      };
+    }
+    if(level===2){
+      const distractors=shuffle(LETTERS.filter(i=>i!==item)).slice(0,2);
+      return {
+        title:"Which picture begins with…?",
+        prompt:`The ${item.letter} sound`,
+        spoken:`Which picture begins with the ${item.letter} sound? Look at the pictures and pick one.`,
+        visual:{kind:"letter",value:item.letter},
+        options:shuffle([item,...distractors]).map(v=>({id:v.letter,symbol:v.picture,text:v.word})),
+        correct:item.letter,
+        hint:`Listen for ${item.word}.`
+      };
+    }
+    return {
+      title:"Find the little letter!",
+      prompt:`Match ${item.letter} to its little letter`,
+      spoken:`Find the lowercase letter that matches uppercase ${item.letter}.`,
+      visual:{kind:"letter",value:item.letter},
+      options:choicesAround(item.letter,remaining).map(v=>({id:v,symbol:LETTERS.find(l=>l.letter===v).lower,text:""})),
+      correct:item.letter,
+      hint:`Look for the little ${item.lower}.`
+    };
+  }
+  function numbersQuestion(level){
+    const range=level===1?[1,2,3]:level===2?[2,3,4,5]:[4,5,6,7];
+    const number=avoidRepeat(range,v=>String(v));
+    const emoji=sample(["🍎","🐞","🐥","⭐","🍓","🌼"]);
+    const pool=[1,2,3,4,5,6,7,8];
+    // Prefer nearby distractors: answers are never duplicated.
+    const nearby=pool.filter(n=>n!==number).sort((a,b)=>Math.abs(a-number)-Math.abs(b-number));
+    const possibilities=shuffle(nearby.slice(0,Math.min(4,nearby.length))).slice(0,2);
+    return {
+      title:"Let's count together!",
+      prompt:"How many do you see?",
+      spoken:`Tap each ${emoji==="🍎"?"apple":emoji==="🐞"?"ladybug":emoji==="🐥"?"chick":emoji==="⭐"?"star":emoji==="🍓"?"strawberry":"flower"} to count. How many are there?`,
+      visual:{kind:"count",value:number,emoji},
+      options:shuffle([number,...possibilities]).map(v=>({id:String(v),symbol:String(v),text:""})),
+      correct:String(number),
+      hint:`Point to each one as you count. ${number} in all!`
+    };
+  }
+  function shapeSVG(name,dim=90){
+    const shapes={
+      circle:'<circle cx="50" cy="50" r="35" fill="#70D5CB"/>',
+      triangle:'<path d="M50 10 L92 85 L8 85 Z" fill="#FFB264"/>',
+      square:'<rect x="17" y="17" width="66" height="66" rx="7" fill="#9484E7"/>',
+      star:'<path d="M50 7 L62 36 L93 39 L69 59 L77 90 L50 73 L23 90 L31 59 L7 39 L38 36 Z" fill="#F6CD5D"/>',
+      rectangle:'<rect x="7" y="26" width="86" height="49" rx="7" fill="#FF9AB6"/>',
+      heart:'<path d="M50 88 C22 67 7 51 9 31 C11 10 39 5 50 27 C65 2 91 14 91 36 C91 56 70 75 50 88Z" fill="#EF82B0"/>'
+    };
+    return `<svg viewBox="0 0 100 100" width="${dim}" height="${dim}" role="img" aria-label="${name}">${shapes[name] || shapes.circle}</svg>`;
+  }
+  function shapesQuestion(level){
+    if(level===3){
+      const base=avoidRepeat(SHAPES,v=>v);
+      const other=sample(SHAPES.filter(s=>s!==base));
+      const pool=choicesAround(base,SHAPES);
+      return {
+        title:"What comes next?",
+        prompt:"Finish the pattern!",
+        spoken:"Look at the pattern. What shape comes next?",
+        visual:{kind:"pattern",value:[base,other,base,other]},
+        options:pool.map(v=>({id:v,symbol:v,text:v,shape:true})),
+        correct:base,
+        hint:`The shapes take turns. Look for the ${base}.`
+      };
+    }
+    const items=level===1?SHAPES.slice(0,3):SHAPES;
+    const selected=avoidRepeat(items,v=>v);
+    return {
+      title:level===1?"Find my shape!":"Shape detective!",
+      prompt:level===1?`Tap the ${selected}`:({triangle:"Which shape has 3 sides?",square:"Which shape has 4 equal sides?",rectangle:"Which shape has 2 long sides?",circle:"Which shape is round?",star:"Which shape has pointy tips?",heart:"Which shape looks like a heart?"})[selected],
+      spoken:level===1?`Can you find the ${selected}?`:({triangle:"Find the shape with three sides.",square:"Find the shape with four equal sides.",rectangle:"Find the long rectangle.",circle:"Find the round circle.",star:"Find the star with pointy tips.",heart:"Find the heart shape."})[selected],
+      visual:{kind:"shape",value:selected},
+      options:choicesAround(selected,items).map(v=>({id:v,symbol:v,text:v,shape:true})),
+      correct:selected,
+      hint:`Look carefully for the ${selected}.`
+    };
+  }
+  function feelingsQuestion(level){
+    const options=level===1?FACES.slice(0,3):level===2?FACES.slice(0,4):FACES;
+    const face=avoidRepeat(options,v=>v.id);
+    const stories={
+      happy:"Pip's friend has a big smile. Which face matches?",
+      sad:"A fox looks sad and has tears. Which face matches?",
+      surprised:"A bunny opens their mouth wide in surprise. Which face matches?",
+      angry:"A bear is frowning because something went wrong. Which face matches?",
+      sleepy:"A kitten yawns and wants to rest. Which face matches?",
+      silly:"Pip makes a silly face with his tongue out. Which face matches?"
+    };
+    return {
+      title:level<3?"Find the feeling!":"Read the face!",
+      prompt:level<3?`Which face looks ${face.label}?`:stories[face.id],
+      spoken:level<3?`Can you find the ${face.label} face?`:stories[face.id],
+      visual:{kind:"feeling",value:level===1?"💗":level===2?"🌈":"🦊"},
+      options:shuffle([face,...shuffle(options.filter(f=>f.id!==face.id)).slice(0,2)]).map(v=>({id:v.id,symbol:v.emoji,text:v.label})),
+      correct:face.id,
+      hint:`Look for the ${face.label} face.`
+    };
+  }
+  function makeQuestion(){
+    const level=progress.worlds[currentWorld].level;
+    return ({
+      letters:letterQuestion,
+      numbers:numbersQuestion,
+      shapes:shapesQuestion,
+      feelings:feelingsQuestion
+    })[currentWorld](level);
+  }
+  function renderVisual(visual){
+    const target=$("#questionVisual");
+    target.innerHTML="";
+    target.setAttribute("aria-hidden",visual.kind==="count"?"false":"true");
+    if(visual.kind==="letter"){
+      const span=document.createElement("span");
+      span.className="visual-letter";span.textContent=visual.value;target.appendChild(span);
+    }else if(visual.kind==="count"){
+      const playArea=document.createElement("div");
+      playArea.className="count-play-area";
+      const hint=document.createElement("div");
+      hint.className="count-hint";hint.textContent="👆 Tap each one to count!";
+      playArea.appendChild(hint);
+      const items=document.createElement("div");
+      items.className="count-items";
+      let tapped=0;
+      for(let n=0;n<visual.value;n++){
+        const object=document.createElement("button");
+        object.type="button";object.className="visual-count";
+        object.textContent=visual.emoji;object.setAttribute("aria-label",`Count item ${n+1}`);
+        object.addEventListener("click",()=>{
+          if(object.classList.contains("tapped") || resolved)return;
+          object.classList.add("tapped");object.disabled=true;tapped++;
+          counter.textContent=tapped===visual.value?`✨ ${tapped}! All counted!`:`⭐ ${tapped} counted`;
+          if(tapped===visual.value) say(`Great counting! You counted ${tapped}. Now find the number.`);
+        });
+        items.appendChild(object);
+      }
+      playArea.appendChild(items);
+      const counter=document.createElement("div");
+      counter.className="count-counter";counter.setAttribute("aria-live","polite");counter.textContent="🌟 0 counted";
+      playArea.appendChild(counter);target.appendChild(playArea);
+    }else if(visual.kind==="shape"){
+      target.innerHTML=shapeSVG(visual.value,112);
+    }else if(visual.kind==="pattern"){
+      target.innerHTML=visual.value.map(value=>shapeSVG(value,76)).join("")+'<span class="visual-letter" style="font-size:78px;color:#E6A87B">?</span>';
+    }else if(visual.kind==="feeling"){
+      const span=document.createElement("span");
+      span.className="visual-feeling";span.textContent=visual.value;target.appendChild(span);
+    }
+  }
+  function renderQuestion(){
+    mistakes=0;resolved=false;
+    question=makeQuestion();
+    $("#gameTitle").textContent=question.title;
+    $("#gamePrompt").textContent=question.prompt;
+    $("#roundLabel").textContent=`${round+1} of ${TOTAL_ROUNDS}`;
+    $("#gameWorldLabel").textContent=worldInfo[currentWorld].title;
+    $("#feedback").textContent="Pick the answer you like best!";
+    $("#nextBtn").hidden=true;
+    $("#progressDots").innerHTML=Array.from({length:TOTAL_ROUNDS},(_,i)=>`<span class="progress-dot ${i<round?"done":i===round?"current":""}"></span>`).join("");
+    renderVisual(question.visual);
+    const choices=$("#answerGrid");choices.replaceChildren();
+    for(const option of question.options){
+      const button=document.createElement("button");
+      button.type="button";button.className="answer-choice";
+      button.dataset.answer=option.id;
+      button.setAttribute("aria-label",option.text?`${option.text}`:`${option.id}`);
+      if(option.shape) button.innerHTML=shapeSVG(option.symbol,80);
+      else {
+        const span=document.createElement("span");
+        span.className="choice-symbol";span.textContent=option.symbol;
+        button.appendChild(span);
+      }
+      if(option.text){
+        const text=document.createElement("span");text.className="choice-text";text.textContent=option.text;
+        button.appendChild(text);
+      }
+      button.addEventListener("click",()=>chooseAnswer(button,option.id));
+      choices.appendChild(button);
+    }
+    say(question.spoken);
+  }
+  function updateDifficulty(wasFirstTry){
+    const state=progress.worlds[currentWorld];
+    state.history.push(Boolean(wasFirstTry));state.history=state.history.slice(-6);
+    const lastThree=state.history.slice(-3);
+    const lastTwo=state.history.slice(-2);
+    if(lastThree.length===3 && lastThree.every(Boolean) && state.level<3){
+      state.level++;state.history=[];return;
+    }
+    if(lastTwo.length===2 && lastTwo.every(v=>!v) && state.level>1){
+      state.level--;state.history=[];return;
+    }
+  }
+  function chooseAnswer(button,answer){
+    if(resolved) return;
+    if(answer!==question.correct){
+      mistakes++;
+      button.classList.add("try-again");
+      const message=mistakes>=2?`${question.hint} 🌱`:"Good try! Let's look again. 💛";
+      $("#feedback").textContent=message;
+      if(mistakes>=2){
+        $$(".answer-choice").forEach(btn=>btn.classList.toggle("hint",btn.dataset.answer===question.correct));
+      }
+      say(mistakes>=2?question.hint:"Good try. Have another look!");
+      return;
+    }
+    resolved=true;
+    button.classList.add("correct");
+    $$(".answer-choice").forEach(btn=>{btn.disabled=true;});
+    $("#feedback").textContent=sample([
+      "Hooray! You did it! 🌟","Amazing exploring! 🌈","Pip says: ribbit, hooray! 🐸","You kept trying! ⭐"
+    ]);
+    $("#nextBtn").hidden=false;
+    $("#nextBtn").textContent=round===TOTAL_ROUNDS-1?"🌟 Collect my sticker!":"Next little step ➜";
+    progress.stars=Math.min(99999,progress.stars+1);
+    updateDifficulty(mistakes===0);
+    updateChrome();save();
+    say("Hooray! Great job!");
+  }
+  function beginWorld(name){
+    if(!(name in worldInfo))return;
+    currentWorld=name;round=0;usedQuestions=new Set();
+    showPage("game");renderQuestion();
+  }
+  function finishWorld(){
+    const state=progress.worlds[currentWorld];
+    state.completed++;
+    const stickerTier=Math.min(state.completed,3);
+    const stickerKey=`${currentWorld}-${stickerTier}`;
+    if(!progress.stickers.includes(stickerKey)) progress.stickers.push(stickerKey);
+    save();
+    const info=worldInfo[currentWorld];
+    $("#earnedSticker").textContent=info.stickers[stickerTier-1];
+    $("#earnedSticker").setAttribute("aria-label",`${info.names[stickerTier-1]} sticker`);
+    $("#stickerLabel").textContent=`${info.names[stickerTier-1]} sticker`;
+    $("#finishMessage").textContent=`You explored ${info.title} and tried four fun things!`;
+    showPage("finish");
+    say("Hip hip hooray! You did it! Time to stretch and take a little break!");
+  }
+  function drawStickers(){
+    const grid=$("#stickerGrid");grid.replaceChildren();
+    let unlocked=0;
+    for(const [world,info] of Object.entries(worldInfo)){
+      for(let tier=1;tier<=3;tier++){
+        const earned=progress.stickers.includes(`${world}-${tier}`);if(earned)unlocked++;
+        const tile=document.createElement("div");
+        tile.className=`sticker-tile${earned?"":" locked"}`;
+        const icon=document.createElement("span");icon.className="sticker-art";icon.textContent=earned?info.stickers[tier-1]:"❔";
+        const title=document.createElement("strong");title.textContent=earned?info.names[tier-1]:"Mystery sticker";
+        const desc=document.createElement("small");desc.textContent=earned?info.title:"Keep exploring to discover";
+        tile.append(icon,title,desc);grid.appendChild(tile);
+      }
+    }
+    $("#stickerSummary").textContent=unlocked?`${unlocked} of 12 happy stickers collected!`: "No stickers yet — your first adventure awaits!";
+  }
+  // Navigation uses event delegation to support both desktop and iPad touch.
+  document.addEventListener("click",(event)=>{
+    const pageButton=event.target.closest("[data-page]");
+    if(pageButton){showPage(pageButton.dataset.page);return;}
+    const worldButton=event.target.closest("[data-world]");
+    if(worldButton){beginWorld(worldButton.dataset.world);}
+  });
+  $("#surpriseBtn").addEventListener("click",()=>beginWorld(sample(Object.keys(worldInfo))));
+  $("#hearAgain").addEventListener("click",()=>{if(question) say(question.spoken)});
+  $("#soundBtn").addEventListener("click",()=>{
+    progress.sound=!progress.sound;save();updateChrome();
+    if(progress.sound) say("Hello, explorer! Sound is on.");
+    else stopSpeech();
+  });
+  $("#nextBtn").addEventListener("click",()=>{
+    if(!resolved)return;
+    if(round>=TOTAL_ROUNDS-1)finishWorld();
+    else{round++;renderQuestion();}
+  });
+  const guide=$("#grownupsDialog");
+  $("#grownupsBtn").addEventListener("click",()=>guide.showModal());
+  $("#closeGrownups").addEventListener("click",()=>guide.close());
+  $("#resetProgress").addEventListener("click",()=>{
+    if(window.confirm("Clear this device's SkillSpring stars, stickers, and learning progress?")){
+      progress=defaultProgress();save();guide.close();updateChrome();showPage("home");
+    }
+  });
+  updateChrome();
+  drawStickers();
+  if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+    window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+  }
+})();
+</script></body>
+</html>

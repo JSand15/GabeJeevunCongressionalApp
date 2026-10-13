@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9FE5F2">
+  <meta name="description" content="SkillSpring Little Explorers: cheerful, bite-size learning adventures for early learners. Works offline; no account needed.">
+  <meta name="color-scheme" content="light">
+  <title>SkillSpring 🌼 Little Explorers</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to activities</a>
+  <div class="sky-sprinkles" aria-hidden="true"><span>✦</span><span>✿</span><span>★</span><span>✦</span><span>✿</span></div>
+  <div class="app-shell">
+    <header class="site-header">
+      <button class="logo" type="button" data-page="home" aria-label="SkillSpring home">
+        <span class="logo-flower">✿</span>
+        <span><strong>skill<span>spring</span></strong><small>LITTLE EXPLORERS</small></span>
+      </button>
+      <nav class="nav-tabs" aria-label="Where to go">
+        <button type="button" data-page="home" class="nav-tab current" aria-current="page"><span aria-hidden="true">🏡</span> <span>Home</span></button>
+        <button type="button" data-page="map" class="nav-tab"><span aria-hidden="true">🗺️</span> <span>Worlds</span></button>
+        <button type="button" data-page="stickers" class="nav-tab"><span aria-hidden="true">🌟</span> <span>Stickers</span></button>
+      </nav>
+      <div class="header-actions">
+        <span class="star-count" aria-label="Stars earned"><span aria-hidden="true">⭐</span><span id="headerStars">0</span></span>
+        <button type="button" class="sound-btn" id="soundBtn" aria-label="Turn spoken instructions off" aria-pressed="true" title="Toggle spoken instructions">🔊</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="homePage" class="page" aria-labelledby="homeTitle">
+        <div class="hero-card">
+          <div class="hero-decor cloud cloud-one" aria-hidden="true"></div>
+          <div class="hero-decor cloud cloud-two" aria-hidden="true"></div>
+          <div class="hero-decor sunshine" aria-hidden="true"><span>☀️</span></div>
+          <div class="hero-text">
+            <span class="pill">🌈 BIG FUN FOR LITTLE LEARNERS</span>
+            <h1 id="homeTitle">Every little<br><em>step is magic!</em></h1>
+            <p>Tap, play, discover, and grow with Pip!</p>
+            <button type="button" class="big-btn orange" id="surpriseBtn">🎲 Surprise me! <span aria-hidden="true">➜</span></button>
+          </div>
+          <div class="hero-character">
+            <div class="speech-bubble">Hi, explorer!<br>Let's play! <span>💛</span></div>
+            <img class="hero-frog" src="assets/pip.svg" alt="Pip the happy green frog waving hello">
+            <div class="hero-ground" aria-hidden="true"><span>🌷</span><span>🌼</span><span>🌱</span></div>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">CHOOSE AN ADVENTURE</span><h2>Where shall we play?</h2></div>
+          <button class="text-button" type="button" data-page="map">See all worlds <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="world-grid">
+          <button class="world-card letters" data-world="letters" type="button" aria-label="Play Letter Lagoon">
+            <span class="world-decoration" aria-hidden="true">✦</span>
+            <span class="world-emoji" aria-hidden="true">🦜</span>
+            <span class="world-title">Letter Lagoon</span>
+            <span class="world-desc">Letters & sounds</span>
+            <span class="world-bottom"><span class="world-level" data-level="letters">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card numbers" data-world="numbers" type="button" aria-label="Play Counting Garden">
+            <span class="world-decoration" aria-hidden="true">✿</span>
+            <span class="world-emoji" aria-hidden="true">🍎</span>
+            <span class="world-title">Counting Garden</span>
+            <span class="world-desc">Numbers & counting</span>
+            <span class="world-bottom"><span class="world-level" data-level="numbers">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card shapes" data-world="shapes" type="button" aria-label="Play Shape Safari">
+            <span class="world-decoration" aria-hidden="true">✧</span>
+            <span class="world-emoji" aria-hidden="true">🧩</span>
+            <span class="world-title">Shape Safari</span>
+            <span class="world-desc">Shapes & patterns</span>
+            <span class="world-bottom"><span class="world-level" data-level="shapes">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="world-card feelings" data-world="feelings" type="button" aria-label="Play Feelings Forest">
+            <span class="world-decoration" aria-hidden="true">♥</span>
+            <span class="world-emoji" aria-hidden="true">🦊</span>
+            <span class="world-title">Feelings Forest</span>
+            <span class="world-desc">Faces & feelings</span>
+            <span class="world-bottom"><span class="world-level" data-level="feelings">Little Seed</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+
+        <div class="home-footer-row">
+          <div class="note-card"><span class="note-icon">💚</span><div><strong>Little adventures. Big discoveries.</strong><p>Each playtime has just 4 quick questions. It's always okay to take a break!</p></div></div>
+          <div class="note-card soft"><span class="note-icon">🪴</span><div><strong>Learn at your own pace</strong><p>No timers, no losing, and no one gets left behind.</p></div></div>
+        </div>
+      </section>
+
+      <section id="mapPage" class="page" hidden aria-labelledby="mapTitle">
+        <div class="page-intro"><span class="pill">🗺️ THE ADVENTURE MAP</span><h1 id="mapTitle">A world of little wonders</h1><p>Pick a world to explore with Pip.</p></div>
+        <div class="map-landscape" aria-label="Map of four learning worlds">
+          <div class="map-river" aria-hidden="true"></div>
+          <button type="button" class="map-spot m-one" data-world="letters"><span class="map-sprite" aria-hidden="true">🦜</span><strong>Letter Lagoon</strong><small>ABC</small></button>
+          <button type="button" class="map-spot m-two" data-world="numbers"><span class="map-sprite" aria-hidden="true">🍎</span><strong>Counting Garden</strong><small>123</small></button>
+          <button type="button" class="map-spot m-three" data-world="shapes"><span class="map-sprite" aria-hidden="true">🧩</span><strong>Shape Safari</strong><small>◯ △ □</small></button>
+          <button type="button" class="map-spot m-four" data-world="feelings"><span class="map-sprite" aria-hidden="true">🦊</span><strong>Feelings Forest</strong><small>☺ ♥</small></button>
+          <span class="land-decor flower-a" aria-hidden="true">🌸</span><span class="land-decor flower-b" aria-hidden="true">🌻</span><span class="land-decor flower-c" aria-hidden="true">🌷</span>
+        </div>
+        <div class="map-helper"><img src="assets/pip.svg" alt="" aria-hidden="true"><span>All worlds are open! Choose the one that looks fun.</span></div>
+      </section>
+
+      <section id="stickersPage" class="page" hidden aria-labelledby="stickersTitle">
+        <div class="page-intro"><span class="pill">🌟 MY HAPPY COLLECTION</span><h1 id="stickersTitle">Your sticker garden!</h1><p>Finish a little adventure to earn a sticker.</p></div>
+        <div class="sticker-summary"><span aria-hidden="true">🎉</span> <strong id="stickerSummary">No stickers yet — your first adventure awaits!</strong></div>
+        <div class="sticker-grid" id="stickerGrid"></div>
+        <div class="sticker-footer"><button type="button" class="big-btn purple" data-page="home">🏡 Let's play some more</button></div>
+      </section>
+
+      <section id="gamePage" class="page" hidden aria-labelledby="gameTitle">
+        <div class="game-topline">
+          <button type="button" class="back-btn" data-page="home" aria-label="Leave this game and return home">← Home</button>
+          <span id="gameWorldLabel" class="game-world-label">Little Adventure</span>
+          <button type="button" class="hear-btn" id="hearAgain" aria-label="Hear the question again">🔊 Hear again</button>
+        </div>
+        <div class="game-panel">
+          <div class="game-progress" aria-label="Question progress">
+            <span class="game-progress-label" id="roundLabel">1 of 4</span>
+            <div class="progress-dots" id="progressDots" aria-hidden="true"></div>
+          </div>
+          <div class="question-title-row">
+            <img src="assets/pip.svg" alt="" aria-hidden="true" class="game-pip">
+            <div class="question-bubble"><h1 id="gameTitle">Let's play!</h1><p id="gamePrompt">Tap the answer.</p></div>
+          </div>
+          <div id="questionVisual" class="question-visual" aria-hidden="true"></div>
+          <div id="answerGrid" class="answer-grid" role="group" aria-label="Answer choices"></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+          <button type="button" class="big-btn next-btn" id="nextBtn" hidden>Next adventure step ➜</button>
+        </div>
+        <div class="game-footnote">🌱 Trying is learning. There are no wrong turns!</div>
+      </section>
+
+      <section id="finishPage" class="page" hidden aria-labelledby="finishTitle">
+        <div class="finish-panel">
+          <div class="confetti-stars" aria-hidden="true">✦ 🌸 ✦ ⭐ ✧ 🌼 ✦</div>
+          <img src="assets/pip.svg" alt="" aria-hidden="true" class="finish-pip">
+          <span class="pill">YOU DID IT!</span>
+          <h1 id="finishTitle">Hip hip hooray!</h1>
+          <p id="finishMessage">You tried four fun things. Pip is proud of you!</p>
+          <div class="earned-sticker" id="earnedSticker" aria-label="Sticker you earned">🌈</div>
+          <span id="stickerLabel" class="sticker-label">Rainbow Explorer Sticker</span>
+          <div class="finish-actions">
+            <button type="button" class="big-btn orange" data-page="stickers">🌟 See my stickers</button>
+            <button type="button" class="big-btn white" data-page="home">🏡 All done for now</button>
+          </div>
+          <p class="rest-message">🌼 Time for a stretch, a snack, or a real-world adventure!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>🌼 Made for curious little minds.</span>
+      <button id="grownupsBtn" type="button">For grown-ups ⚙️</button>
+    </footer>
+  </div>
+
+  <dialog id="grownupsDialog" class="grownups-dialog" aria-labelledby="grownupsTitle">
+    <form method="dialog" class="dialog-top"><h2 id="grownupsTitle">👋 Hello, grown-up!</h2><button class="close-dialog" aria-label="Close grown-ups guide">✕</button></form>
+    <p>SkillSpring is a small, screen-time-friendly learning prototype for ages roughly 3–7. You can play together and talk about the questions.</p>
+    <ul>
+      <li>Each adventure is four short questions with a natural ending.</li>
+      <li>Spoken prompts can be turned on or off with the speaker button.</li>
+      <li>No account, chat, advertising, third-party analytics, or remote AI service.</li>
+      <li>Stars, stickers, and learning progress are stored only in this browser, if available.</li>
+      <li>Question difficulty gently adjusts with practice. This is not a diagnostic assessment.</li>
+    </ul>
+    <p><strong>Tip:</strong> For pre-readers, tap the speaker 🔊 after opening a game. iPad browsers may require a tap before audio starts.</p>
+    <button type="button" class="reset-btn" id="resetProgress">Reset progress on this device</button>
+    <button type="button" class="big-btn purple dialog-done" id="closeGrownups">Done ✓</button>
+  </dialog>
+</body>
+</html>

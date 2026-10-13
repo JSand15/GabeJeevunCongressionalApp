@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 410" role="img" aria-labelledby="title">
+<title id="title">Pip the cheerful green frog</title>
+<defs>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A3F271"/><stop offset="1" stop-color="#59CE75"/></linearGradient>
+ <linearGradient id="belly" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FFD3"/><stop offset="1" stop-color="#D8F4AB"/></linearGradient>
+</defs>
+<ellipse cx="208" cy="383" rx="147" ry="18" fill="#3F8C69" opacity=".16"/>
+<path d="M110 263C73 273 56 312 87 335c27 17 57 2 81-14M309 262c41 9 61 48 31 70-25 19-61 8-87-9" fill="none" stroke="#65CC6F" stroke-width="39" stroke-linecap="round"/>
+<ellipse cx="211" cy="281" rx="115" ry="102" fill="url(#skin)"/>
+<ellipse cx="210" cy="297" rx="74" ry="67" fill="url(#belly)"/>
+<path d="M144 356q-35 37-71 10M272 356q35 37 71 10" stroke="#59BC66" stroke-width="24" stroke-linecap="round" fill="none"/>
+<circle cx="128" cy="112" r="45" fill="url(#skin)"/><circle cx="290" cy="112" r="45" fill="url(#skin)"/>
+<ellipse cx="209" cy="174" rx="148" ry="118" fill="url(#skin)"/>
+<ellipse cx="133" cy="121" rx="28" ry="35" fill="#fff"/><ellipse cx="286" cy="121" rx="28" ry="35" fill="#fff"/>
+<ellipse cx="140" cy="124" rx="13" ry="18" fill="#254D3D"/><ellipse cx="280" cy="124" rx="13" ry="18" fill="#254D3D"/>
+<circle cx="144" cy="118" r="5" fill="#fff"/><circle cx="284" cy="118" r="5" fill="#fff"/>
+<ellipse cx="150" cy="191" rx="8" ry="6" fill="#398B55"/><ellipse cx="269" cy="191" rx="8" ry="6" fill="#398B55"/>
+<path d="M175 207q35 41 70 0" fill="none" stroke="#347B52" stroke-width="9" stroke-linecap="round"/>
+<ellipse cx="104" cy="209" rx="29" ry="16" fill="#FF9BB7" opacity=".7"/><ellipse cx="314" cy="209" rx="29" ry="16" fill="#FF9BB7" opacity=".7"/>
+<path d="M164 39c18-26 35-17 45-1 11-18 32-24 47 1-26 7-49 26-47 26s-30-20-45-26" fill="#FFCD62" stroke="#FFA85D" stroke-width="4"/>
+<path d="M318 256q49-9 56-47" fill="none" stroke="#65CC6F" stroke-width="25" stroke-linecap="round"/>
+<circle cx="370" cy="209" r="21" fill="#65CC6F"/>
+<path d="M367 187l-7-15M381 194l13-11M390 214l17 1" stroke="#65CC6F" stroke-width="9" stroke-linecap="round"/>
+</svg>
